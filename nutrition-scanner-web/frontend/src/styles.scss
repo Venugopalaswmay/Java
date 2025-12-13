@@ -1,0 +1,126 @@
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+button:active {
+  opacity: 0.7;
+}
+
+/* Home */
+.card {
+  display: block;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card.scan { background: #2f95dc; color: white; }
+.card.list { background: white; }
+
+.icon { font-size: 40px; margin-bottom: 10px; }
+
+/* Avoid List */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.input-group button {
+  background: #2f95dc;
+  color: white;
+}
+
+.item {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete {
+  background: transparent;
+  color: red;
+  font-size: 20px;
+  padding: 5px;
+}
+
+/* Scan */
+.camera-placeholder {
+  height: 300px;
+  background: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.scan-btn {
+  width: 100%;
+  background: #2f95dc;
+  color: white;
+  padding: 15px;
+}
+
+.status {
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.status.safe { background: #34c759; }
+.status.danger { background: #ff3b30; }
+
+.warning-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid #ff3b30;
+}
+
+.reset-btn {
+  width: 100%;
+  background: #333;
+  color: white;
+  margin-top: 20px;
+}

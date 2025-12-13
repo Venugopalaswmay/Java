@@ -1,0 +1,5 @@
+com/nutrition/scanner/model/Ingredient.class
+com/nutrition/scanner/model/Warning.class
+com/nutrition/scanner/NutritionScannerApplication.class
+com/nutrition/scanner/service/AnalysisService.class
+com/nutrition/scanner/controller/NutritionController.class

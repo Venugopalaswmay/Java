@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Avoid List</h2>
+
+    <div class="input-group">
+        <input [(ngModel)]="newIngredientName" placeholder="Add ingredient (e.g. Sugar)" (keyup.enter)="add()">
+        <button (click)="add()">Add</button>
+    </div>
+
+    <div class="list">
+        <div *ngFor="let item of ingredients" class="item">
+            <div class="info">
+                <h3>{{ item.name }}</h3>
+                <small>Aliases: {{ item.aliases.join(', ') || 'None' }}</small>
+            </div>
+            <button class="delete" (click)="remove(item.id)">🗑️</button>
+        </div>
+        <p *ngIf="ingredients.length === 0" class="empty">No ingredients in your avoid list.</p>
+    </div>
+</div>

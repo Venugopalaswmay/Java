@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Scanner</h2>
+
+    <div *ngIf="!warnings" class="scanner-view">
+        <div class="camera-placeholder">
+            <p *ngIf="!scanning">Camera View (Simulated)</p>
+            <p *ngIf="scanning">Scanning...</p>
+        </div>
+        <button class="scan-btn" (click)="startScan()" [disabled]="scanning">
+            {{ scanning ? 'Scanning...' : 'Capture Label' }}
+        </button>
+        <p class="hint">Note: This demo uses mock OCR data.</p>
+    </div>
+
+    <div *ngIf="warnings" class="results">
+        <div class="status" [class.safe]="warnings.length === 0" [class.danger]="warnings.length > 0">
+            <h1>{{ warnings.length === 0 ? 'Safe to Eat' : 'Warning Detected' }}</h1>
+        </div>
+
+        <div *ngIf="warnings.length > 0" class="warning-list">
+            <div *ngFor="let w of warnings" class="warning-card">
+                <h3>{{ w.ingredient }}</h3>
+                <p>{{ w.message }}</p>
+                <small *ngIf="w.matchedAlias !== w.ingredient">Matched alias: {{ w.matchedAlias }}</small>
+            </div>
+        </div>
+
+        <div *ngIf="warnings.length === 0" class="safe-msg">
+            No ingredients from your avoid list were found.
+        </div>
+
+        <button (click)="reset()" class="reset-btn">Scan Again</button>
+    </div>
+</div>
