@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: amala-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080" # Maps localhost:8080 to container:8080
+    networks:
+      - amala-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: amala-frontend
+    restart: unless-stopped
+    ports:
+      - "4200:80" # Maps localhost:4200 to Nginx container:80
+    depends_on:
+      - backend
+    networks:
+      - amala-network
+
+networks:
+  amala-network:
+    driver: bridge

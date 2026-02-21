@@ -1,0 +1,72 @@
+<div class="landing-page">
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="nav-content">
+            <div class="brand">
+                <span class="icon">✨</span>
+                <span class="title">Amala Adhyapana</span>
+            </div>
+            <div class="links">
+                <a href="#courses" class="nav-link">Courses</a>
+                <a href="#about" class="nav-link">About</a>
+                <button class="btn-primary">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge glass">🚀 New Learning Platform</div>
+            <h1 class="hero-title">
+                Learning Made <span class="text-gradient">Easy</span>
+            </h1>
+            <p class="hero-subtitle">
+                Master new skills with our interactive and engaging courses. Join thousands of learners achieving their
+                goals today.
+            </p>
+            <div class="hero-actions">
+                <button class="btn-primary btn-lg">Explore Courses</button>
+                <button class="btn-secondary btn-lg glass">Learn More</button>
+            </div>
+        </div>
+
+        <!-- Hero Animations (Decorative) -->
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </header>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses-section">
+        <h2 class="section-title">Featured <span class="text-gradient">Courses</span></h2>
+
+        <div class="loader" *ngIf="loading">
+            <div class="spinner"></div>
+        </div>
+
+        <div class="error-msg glass" *ngIf="error">
+            {{ error }}
+        </div>
+
+        <div class="courses-grid" *ngIf="!loading && !error">
+            <div class="course-card glass" *ngFor="let course of courses">
+                <div class="card-img-wrapper">
+                    <img [src]="course.imageUrl" [alt]="course.title" class="card-img">
+                    <span class="category-badge">{{ course.category }}</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="course-title">{{ course.title }}</h3>
+                    <p class="course-description">{{ course.description }}</p>
+                    <div class="card-footer">
+                        <button class="btn-link">View Details →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Amala Adhyapana. All rights reserved.</p>
+    </footer>
+</div>
